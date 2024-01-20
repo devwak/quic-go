@@ -15,6 +15,7 @@ import (
 	"github.com/metacubex/qpack"
 	"github.com/quic-go/quic-go"
 	"github.com/quic-go/quic-go/http3/qlog"
+	"github.com/quic-go/quic-go/internal/utils"
 	"github.com/quic-go/quic-go/qlogwriter"
 )
 
@@ -171,7 +172,7 @@ func (c *ClientConn) openRequestStream(
 	if c.lastStreamID == invalidStreamID {
 		c.lastStreamID = str.StreamID()
 	} else {
-		c.lastStreamID = max(c.lastStreamID, str.StreamID())
+		c.lastStreamID = utils.Max(c.lastStreamID, str.StreamID())
 	}
 	// check again, in case a (or another) GOAWAY frame was received
 	maxStreamID = c.maxStreamID
