@@ -236,7 +236,7 @@ func TestReceiveStreamReadOverlappingData(t *testing.T) {
 	now := monotime.Now()
 	mockFC.EXPECT().UpdateHighestReceived(protocol.ByteCount(4), false, now).Times(3)
 	mockFC.EXPECT().AddBytesRead(protocol.ByteCount(4))
-	for range 3 {
+	for j := 0; j < 3; j++ {
 		require.NoError(t, str.handleStreamFrame(&wire.StreamFrame{Data: []byte{0xde, 0xad, 0xbe, 0xef}}, now))
 	}
 	b := make([]byte, 4)
@@ -927,7 +927,7 @@ func TestReceiveStreamConcurrentReads(t *testing.T) {
 
 		const num = 3
 		errChan := make(chan error, num)
-		for range num {
+		for j := 0; j < num; j++ {
 			go func() {
 				_, err := str.Read(make([]byte, 8))
 				errChan <- err
@@ -936,7 +936,7 @@ func TestReceiveStreamConcurrentReads(t *testing.T) {
 		require.NoError(t, str.handleStreamFrame(&wire.StreamFrame{Data: []byte("foobar"), Fin: true}, monotime.Now()))
 		synctest.Wait()
 
-		for range num {
+		for j := 0; j < num; j++ {
 			select {
 			case err := <-errChan:
 				require.ErrorIs(t, err, io.EOF)

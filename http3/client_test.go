@@ -192,7 +192,7 @@ func TestClientRequestError(t *testing.T) {
 
 	req, err := http.NewRequest(http.MethodGet, "http://quic-go.net", nil)
 	require.NoError(t, err)
-	for range 1000 {
+	for i := 0; i < 1000; i++ {
 		req.Header.Add(randomString(50), randomString(50))
 	}
 
@@ -406,7 +406,7 @@ func testClient1xxHandling(t *testing.T, numEarlyHints int, terminalStatus int, 
 	rw := newResponseWriter(newStream(rstr, nil, nil, func(io.Reader, *headersFrame) error { return nil }, nil), nil, false, nil)
 	rw.header.Add("Link", "foo")
 	rw.header.Add("Link", "bar")
-	for range numEarlyHints {
+	for i := 0; i < numEarlyHints; i++ {
 		rw.WriteHeader(http.StatusEarlyHints)
 	}
 	rw.WriteHeader(terminalStatus)
@@ -673,7 +673,7 @@ func TestClientConnGoConcurrent(t *testing.T) {
 
 	// of these 2 OpenStreamSync calls, one will succeed, the other one will block
 	errChan := make(chan error, 3)
-	for range 2 {
+	for i := 0; i < 2; i++ {
 		go func() {
 			str, err := cc.OpenRequestStream(context.Background())
 			if err == nil {

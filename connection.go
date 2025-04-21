@@ -1020,7 +1020,7 @@ func (c *Conn) handlePackets() (wasProcessed bool, _ error) {
 	}
 
 	var hasMorePackets bool
-	for range maxPacketsToProcess {
+	for i := 0; i < maxPacketsToProcess; i++ {
 		p := c.receivedPackets.PopFront()
 		c.receivedPacketMx.Unlock()
 
