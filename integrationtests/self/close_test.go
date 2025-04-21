@@ -2,13 +2,14 @@ package self_test
 
 import (
 	"context"
-	"github.com/metacubex/tls"
 	"math"
 	"net"
 	"sync"
 	"sync/atomic"
 	"testing"
 	"time"
+
+	"github.com/metacubex/tls"
 
 	"github.com/quic-go/quic-go"
 	"github.com/quic-go/quic-go/internal/protocol"
@@ -71,7 +72,7 @@ func TestConnectionCloseRetransmission(t *testing.T) {
 		sconn.CloseWithError(1337, "closing")
 
 		// send 100 packets
-		for range 100 {
+		for i := 0; i < 100; i++ {
 			str, err := conn.OpenStream()
 			require.NoError(t, err)
 			_, err = str.Write([]byte("foobar"))
@@ -111,7 +112,7 @@ func TestDrainServerAcceptQueue(t *testing.T) {
 	defer cancel()
 	// fill up the accept queue
 	conns := make([]*quic.Conn, 0, protocol.MaxAcceptQueueSize)
-	for range protocol.MaxAcceptQueueSize {
+	for i := 0; i < protocol.MaxAcceptQueueSize; i++ {
 		conn, err := dialer.Dial(ctx, server.Addr(), getTLSClientConfig(), getQuicConfig(nil))
 		require.NoError(t, err)
 		conns = append(conns, conn)
@@ -119,7 +120,7 @@ func TestDrainServerAcceptQueue(t *testing.T) {
 	time.Sleep(scaleDuration(25 * time.Millisecond)) // wait for connections to be queued
 
 	server.Close()
-	for i := range protocol.MaxAcceptQueueSize {
+	for i := 0; i < protocol.MaxAcceptQueueSize; i++ {
 		c, err := server.Accept(ctx)
 		require.NoError(t, err)
 		// make sure the connection is not closed

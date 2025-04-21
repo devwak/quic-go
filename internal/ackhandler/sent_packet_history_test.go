@@ -11,9 +11,10 @@ import (
 
 func (h *sentPacketHistory) getPacketNumbers() []protocol.PacketNumber {
 	pns := make([]protocol.PacketNumber, 0, len(h.packets))
-	for pn := range h.Packets() {
+	h.Packets()(func(pn protocol.PacketNumber, p *packet) bool {
 		pns = append(pns, pn)
-	}
+		return true
+	})
 	return pns
 }
 
@@ -173,10 +174,11 @@ func TestSentPacketHistoryIterating(t *testing.T) {
 	require.NoError(t, hist.Remove(3))
 
 	var packets []protocol.PacketNumber
-	for pn, p := range hist.Packets() {
+	hist.Packets()(func(pn protocol.PacketNumber, p *packet) bool {
 		require.NotNil(t, p)
 		packets = append(packets, pn)
-	}
+		return true
+	})
 
 	require.Equal(t, []protocol.PacketNumber{1, 2, 6}, packets)
 	require.Equal(t, []protocol.PacketNumber{0, 4, 5}, slicesCollect(hist.SkippedPackets()))
@@ -192,7 +194,7 @@ func TestSentPacketHistoryDeleteWhileIterating(t *testing.T) {
 	hist.SentAckElicitingPacket(5, &packet{})
 
 	var iterations []protocol.PacketNumber
-	for pn := range hist.Packets() {
+	hist.Packets()(func(pn protocol.PacketNumber, p *packet) bool {
 		iterations = append(iterations, pn)
 		switch pn {
 		case 0:
@@ -200,7 +202,8 @@ func TestSentPacketHistoryDeleteWhileIterating(t *testing.T) {
 		case 3:
 			require.NoError(t, hist.Remove(3))
 		}
-	}
+		return true
+	})
 
 	require.Equal(t, []protocol.PacketNumber{0, 1, 3, 5}, iterations)
 	require.Equal(t, []protocol.PacketNumber{1, 5}, hist.getPacketNumbers())
@@ -219,7 +222,7 @@ func TestSentPacketHistoryPathProbes(t *testing.T) {
 	getPacketsInHistory := func(t *testing.T) []protocol.PacketNumber {
 		t.Helper()
 		var pns []protocol.PacketNumber
-		for pn, p := range hist.Packets() {
+		hist.Packets()(func(pn protocol.PacketNumber, p *packet) bool {
 			pns = append(pns, pn)
 			switch pn {
 			case 2, 5:
@@ -227,16 +230,18 @@ func TestSentPacketHistoryPathProbes(t *testing.T) {
 			default:
 				require.False(t, p.isPathProbePacket)
 			}
-		}
+			return true
+		})
 		return pns
 	}
 
 	getPacketsInPathProbeHistory := func(t *testing.T) []protocol.PacketNumber {
 		t.Helper()
 		var pns []protocol.PacketNumber
-		for pn := range hist.PathProbes() {
+		hist.PathProbes()(func(pn protocol.PacketNumber, p *packet) bool {
 			pns = append(pns, pn)
-		}
+			return true
+		})
 		return pns
 	}
 
