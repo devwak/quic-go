@@ -1,7 +1,6 @@
 package ackhandler
 
 import (
-	"slices"
 	"testing"
 
 	"github.com/quic-go/quic-go/internal/monotime"
@@ -44,7 +43,7 @@ func testSentPacketHistoryPacketTracking(t *testing.T, firstPacketAckEliciting b
 	hist.SentAckElicitingPacket(1, &packet{})
 	hist.SentAckElicitingPacket(2, &packet{})
 	require.Equal(t, append(firstPacketNumber, 1, 2), hist.getPacketNumbers())
-	require.Empty(t, slices.Collect(hist.SkippedPackets()))
+	require.Empty(t, slicesCollect(hist.SkippedPackets()))
 	if firstPacketAckEliciting {
 		require.Equal(t, 3, hist.Len())
 	} else {
@@ -65,7 +64,7 @@ func testSentPacketHistoryPacketTracking(t *testing.T, firstPacketAckEliciting b
 	hist.SkippedPacket(10)
 	hist.SentAckElicitingPacket(11, &packet{SendTime: now})
 	require.Equal(t, append(firstPacketNumber, 1, 2, 4, 6, 8, 11), hist.getPacketNumbers())
-	require.Equal(t, []protocol.PacketNumber{7, 10}, slices.Collect(hist.SkippedPackets()))
+	require.Equal(t, []protocol.PacketNumber{7, 10}, slicesCollect(hist.SkippedPackets()))
 	if firstPacketAckEliciting {
 		require.Equal(t, 12, hist.Len())
 	} else {
@@ -92,14 +91,14 @@ func TestSentPacketHistoryRemovePackets(t *testing.T) {
 	hist.SkippedPacket(5)
 	hist.SentAckElicitingPacket(6, &packet{})
 	require.Equal(t, []protocol.PacketNumber{0, 1, 4, 6}, hist.getPacketNumbers())
-	require.Equal(t, []protocol.PacketNumber{2, 3, 5}, slices.Collect(hist.SkippedPackets()))
+	require.Equal(t, []protocol.PacketNumber{2, 3, 5}, slicesCollect(hist.SkippedPackets()))
 
 	require.NoError(t, hist.Remove(0))
-	require.Equal(t, []protocol.PacketNumber{2, 3, 5}, slices.Collect(hist.SkippedPackets()))
+	require.Equal(t, []protocol.PacketNumber{2, 3, 5}, slicesCollect(hist.SkippedPackets()))
 	require.NoError(t, hist.Remove(1))
 	require.Equal(t, []protocol.PacketNumber{4, 6}, hist.getPacketNumbers())
 	// skipped packets should be preserved
-	require.Equal(t, []protocol.PacketNumber{2, 3, 5}, slices.Collect(hist.SkippedPackets()))
+	require.Equal(t, []protocol.PacketNumber{2, 3, 5}, slicesCollect(hist.SkippedPackets()))
 
 	// add one more packet
 	hist.SentAckElicitingPacket(7, &packet{})
@@ -120,7 +119,7 @@ func TestSentPacketHistoryRemovePackets(t *testing.T) {
 	hist.SkippedPacket(10)
 	hist.SentAckElicitingPacket(11, &packet{})
 	hist.SkippedPacket(12)
-	require.Equal(t, []protocol.PacketNumber{5, 9, 10, 12}, slices.Collect(hist.SkippedPackets()))
+	require.Equal(t, []protocol.PacketNumber{5, 9, 10, 12}, slicesCollect(hist.SkippedPackets()))
 
 	// Remove all packets
 	require.NoError(t, hist.Remove(4))
@@ -128,7 +127,7 @@ func TestSentPacketHistoryRemovePackets(t *testing.T) {
 	require.NoError(t, hist.Remove(8))
 	require.NoError(t, hist.Remove(11))
 	require.Empty(t, hist.getPacketNumbers())
-	require.Len(t, slices.Collect(hist.SkippedPackets()), 4)
+	require.Len(t, slicesCollect(hist.SkippedPackets()), 4)
 	require.False(t, hist.HasOutstandingPackets())
 }
 
@@ -170,7 +169,7 @@ func TestSentPacketHistoryIterating(t *testing.T) {
 	hist.SkippedPacket(4)
 	hist.SkippedPacket(5)
 	hist.SentAckElicitingPacket(6, &packet{})
-	require.Equal(t, []protocol.PacketNumber{0, 4, 5}, slices.Collect(hist.SkippedPackets()))
+	require.Equal(t, []protocol.PacketNumber{0, 4, 5}, slicesCollect(hist.SkippedPackets()))
 	require.NoError(t, hist.Remove(3))
 
 	var packets []protocol.PacketNumber
@@ -180,7 +179,7 @@ func TestSentPacketHistoryIterating(t *testing.T) {
 	}
 
 	require.Equal(t, []protocol.PacketNumber{1, 2, 6}, packets)
-	require.Equal(t, []protocol.PacketNumber{0, 4, 5}, slices.Collect(hist.SkippedPackets()))
+	require.Equal(t, []protocol.PacketNumber{0, 4, 5}, slicesCollect(hist.SkippedPackets()))
 }
 
 func TestSentPacketHistoryDeleteWhileIterating(t *testing.T) {
@@ -205,7 +204,7 @@ func TestSentPacketHistoryDeleteWhileIterating(t *testing.T) {
 
 	require.Equal(t, []protocol.PacketNumber{0, 1, 3, 5}, iterations)
 	require.Equal(t, []protocol.PacketNumber{1, 5}, hist.getPacketNumbers())
-	require.Equal(t, []protocol.PacketNumber{2, 4}, slices.Collect(hist.SkippedPackets()))
+	require.Equal(t, []protocol.PacketNumber{2, 4}, slicesCollect(hist.SkippedPackets()))
 }
 
 func TestSentPacketHistoryPathProbes(t *testing.T) {
