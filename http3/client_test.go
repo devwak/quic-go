@@ -14,11 +14,11 @@ import (
 	mrand "github.com/metacubex/randv2"
 
 	"github.com/metacubex/qpack"
-	"github.com/metacubex/quic-go"
-	"github.com/metacubex/quic-go/http3/qlog"
-	"github.com/metacubex/quic-go/qlogwriter"
-	"github.com/metacubex/quic-go/quicvarint"
-	"github.com/metacubex/quic-go/testutils/events"
+	"github.com/devwak/quic-go"
+	"github.com/devwak/quic-go/http3/qlog"
+	"github.com/devwak/quic-go/qlogwriter"
+	"github.com/devwak/quic-go/quicvarint"
+	"github.com/devwak/quic-go/testutils/events"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

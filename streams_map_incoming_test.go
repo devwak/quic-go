@@ -7,10 +7,10 @@ import (
 
 	rand "github.com/metacubex/randv2"
 
-	"github.com/metacubex/quic-go/internal/protocol"
-	"github.com/metacubex/quic-go/internal/qerr"
-	"github.com/metacubex/quic-go/internal/synctest"
-	"github.com/metacubex/quic-go/internal/wire"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/internal/qerr"
+	"github.com/devwak/quic-go/internal/synctest"
+	"github.com/devwak/quic-go/internal/wire"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

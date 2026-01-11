@@ -5,7 +5,7 @@ import (
 
 	"golang.org/x/exp/slices"
 
-	"github.com/metacubex/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/internal/protocol"
 )
 
 const maxSkippedPackets = 4

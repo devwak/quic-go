@@ -1,9 +1,9 @@
 package http3
 
 import (
-	"github.com/metacubex/quic-go"
-	"github.com/metacubex/quic-go/http3/qlog"
-	"github.com/metacubex/quic-go/qlogwriter"
+	"github.com/devwak/quic-go"
+	"github.com/devwak/quic-go/http3/qlog"
+	"github.com/devwak/quic-go/qlogwriter"
 
 	"github.com/metacubex/qpack"
 )

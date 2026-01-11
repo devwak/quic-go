@@ -6,8 +6,8 @@ import (
 	"os"
 	"sync"
 
-	"github.com/metacubex/quic-go"
-	"github.com/metacubex/quic-go/internal/utils"
+	"github.com/devwak/quic-go"
+	"github.com/devwak/quic-go/internal/utils"
 )
 
 const streamDatagramQueueLen = 32

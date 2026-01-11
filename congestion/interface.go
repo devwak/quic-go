@@ -3,8 +3,8 @@ package congestion
 import (
 	"time"
 
-	"github.com/metacubex/quic-go/internal/protocol"
-	"github.com/metacubex/quic-go/monotime"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/monotime"
 )
 
 type (

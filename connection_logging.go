@@ -5,10 +5,10 @@ import (
 	"net"
 	"net/netip"
 
-	"github.com/metacubex/quic-go/internal/ackhandler"
-	"github.com/metacubex/quic-go/internal/protocol"
-	"github.com/metacubex/quic-go/internal/wire"
-	"github.com/metacubex/quic-go/qlog"
+	"github.com/devwak/quic-go/internal/ackhandler"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/internal/wire"
+	"github.com/devwak/quic-go/qlog"
 )
 
 // ConvertFrame converts a wire.Frame into a logging.Frame.

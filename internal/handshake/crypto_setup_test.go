@@ -13,11 +13,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/metacubex/quic-go/internal/protocol"
-	"github.com/metacubex/quic-go/internal/qerr"
-	"github.com/metacubex/quic-go/internal/testdata"
-	"github.com/metacubex/quic-go/internal/utils"
-	"github.com/metacubex/quic-go/internal/wire"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/internal/qerr"
+	"github.com/devwak/quic-go/internal/testdata"
+	"github.com/devwak/quic-go/internal/utils"
+	"github.com/devwak/quic-go/internal/wire"
 
 	"github.com/stretchr/testify/require"
 )

@@ -6,8 +6,8 @@ import (
 	"io"
 	"sync"
 
-	"github.com/metacubex/quic-go"
-	"github.com/metacubex/quic-go/internal/utils"
+	"github.com/devwak/quic-go"
+	"github.com/devwak/quic-go/internal/utils"
 )
 
 // A Hijacker allows hijacking of the stream creating part of a quic.Conn from a http.ResponseWriter.

@@ -5,7 +5,7 @@ import (
 	"encoding/binary"
 	"errors"
 
-	"github.com/metacubex/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/internal/protocol"
 )
 
 // ParseVersionNegotiationPacket parses a Version Negotiation packet.

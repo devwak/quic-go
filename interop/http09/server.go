@@ -9,7 +9,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/metacubex/quic-go"
+	"github.com/devwak/quic-go"
 )
 
 const NextProto = "hq-interop"

@@ -8,11 +8,11 @@ import (
 	"net"
 	"os"
 
-	"github.com/metacubex/quic-go"
-	"github.com/metacubex/quic-go/http3"
-	"github.com/metacubex/quic-go/internal/qtls"
-	"github.com/metacubex/quic-go/interop/http09"
-	"github.com/metacubex/quic-go/interop/utils"
+	"github.com/devwak/quic-go"
+	"github.com/devwak/quic-go/http3"
+	"github.com/devwak/quic-go/internal/qtls"
+	"github.com/devwak/quic-go/interop/http09"
+	"github.com/devwak/quic-go/interop/utils"
 )
 
 func main() {

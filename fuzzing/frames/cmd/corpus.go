@@ -6,10 +6,10 @@ import (
 	"log"
 	"time"
 
-	"github.com/metacubex/quic-go"
-	"github.com/metacubex/quic-go/fuzzing/internal/helper"
-	"github.com/metacubex/quic-go/internal/protocol"
-	"github.com/metacubex/quic-go/internal/wire"
+	"github.com/devwak/quic-go"
+	"github.com/devwak/quic-go/fuzzing/internal/helper"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/internal/wire"
 )
 
 const version = protocol.Version1

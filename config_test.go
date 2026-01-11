@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/metacubex/quic-go/internal/protocol"
-	"github.com/metacubex/quic-go/qlogwriter"
-	"github.com/metacubex/quic-go/quicvarint"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/qlogwriter"
+	"github.com/devwak/quic-go/quicvarint"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

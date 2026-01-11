@@ -14,20 +14,20 @@ import (
 
 	"github.com/metacubex/tls"
 
-	"github.com/metacubex/quic-go/internal/ackhandler"
-	"github.com/metacubex/quic-go/internal/flowcontrol"
-	"github.com/metacubex/quic-go/internal/handshake"
-	"github.com/metacubex/quic-go/internal/mocks"
-	mockackhandler "github.com/metacubex/quic-go/internal/mocks/ackhandler"
-	"github.com/metacubex/quic-go/internal/monotime"
-	"github.com/metacubex/quic-go/internal/protocol"
-	"github.com/metacubex/quic-go/internal/qerr"
-	"github.com/metacubex/quic-go/internal/synctest"
-	"github.com/metacubex/quic-go/internal/utils"
-	"github.com/metacubex/quic-go/internal/wire"
-	"github.com/metacubex/quic-go/qlog"
-	"github.com/metacubex/quic-go/qlogwriter"
-	"github.com/metacubex/quic-go/testutils/events"
+	"github.com/devwak/quic-go/internal/ackhandler"
+	"github.com/devwak/quic-go/internal/flowcontrol"
+	"github.com/devwak/quic-go/internal/handshake"
+	"github.com/devwak/quic-go/internal/mocks"
+	mockackhandler "github.com/devwak/quic-go/internal/mocks/ackhandler"
+	"github.com/devwak/quic-go/internal/monotime"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/internal/qerr"
+	"github.com/devwak/quic-go/internal/synctest"
+	"github.com/devwak/quic-go/internal/utils"
+	"github.com/devwak/quic-go/internal/wire"
+	"github.com/devwak/quic-go/qlog"
+	"github.com/devwak/quic-go/qlogwriter"
+	"github.com/devwak/quic-go/testutils/events"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -1918,7 +1918,7 @@ func TestConnectionPacketPacing(t *testing.T) {
 }
 
 // When the send queue blocks, we need to reset the pacing timer, otherwise the run loop might busy-loop.
-// See https://github.com/metacubex/quic-go/pull/4943 for more details.
+// See https://github.com/devwak/quic-go/pull/4943 for more details.
 func TestConnectionPacingAndSendQueue(t *testing.T) {
 	synctest.Test(t, func(t *testing.T) {
 		mockCtrl := gomock.NewController(t)

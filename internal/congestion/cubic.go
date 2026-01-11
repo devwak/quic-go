@@ -4,9 +4,9 @@ import (
 	"math"
 	"time"
 
-	"github.com/metacubex/quic-go/internal/monotime"
-	"github.com/metacubex/quic-go/internal/protocol"
-	"github.com/metacubex/quic-go/internal/utils"
+	"github.com/devwak/quic-go/internal/monotime"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/internal/utils"
 )
 
 // This cubic implementation is based on the one found in Chromiums's QUIC

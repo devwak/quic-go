@@ -9,11 +9,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/metacubex/quic-go"
-	h3qlog "github.com/metacubex/quic-go/http3/qlog"
-	"github.com/metacubex/quic-go/internal/utils"
-	"github.com/metacubex/quic-go/qlog"
-	"github.com/metacubex/quic-go/qlogwriter"
+	"github.com/devwak/quic-go"
+	h3qlog "github.com/devwak/quic-go/http3/qlog"
+	"github.com/devwak/quic-go/internal/utils"
+	"github.com/devwak/quic-go/qlog"
+	"github.com/devwak/quic-go/qlogwriter"
 )
 
 // GetSSLKeyLog creates a file for the TLS key log

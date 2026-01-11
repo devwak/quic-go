@@ -6,9 +6,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/metacubex/quic-go/internal/monotime"
-	"github.com/metacubex/quic-go/internal/protocol"
-	"github.com/metacubex/quic-go/internal/utils"
+	"github.com/devwak/quic-go/internal/monotime"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/internal/utils"
 )
 
 type connCapabilities struct {

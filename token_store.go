@@ -3,8 +3,8 @@ package quic
 import (
 	"sync"
 
-	"github.com/metacubex/quic-go/internal/utils"
-	list "github.com/metacubex/quic-go/internal/utils/linkedlist"
+	"github.com/devwak/quic-go/internal/utils"
+	list "github.com/devwak/quic-go/internal/utils/linkedlist"
 )
 
 type singleOriginTokenStore struct {

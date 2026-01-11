@@ -1,4 +1,4 @@
-module github.com/metacubex/quic-go
+module github.com/devwak/quic-go
 
 go 1.20
 

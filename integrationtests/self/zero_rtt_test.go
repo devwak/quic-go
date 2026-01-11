@@ -12,12 +12,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/metacubex/quic-go"
-	quicproxy "github.com/metacubex/quic-go/integrationtests/tools/proxy"
-	"github.com/metacubex/quic-go/internal/protocol"
-	"github.com/metacubex/quic-go/internal/wire"
-	"github.com/metacubex/quic-go/qlog"
-	"github.com/metacubex/quic-go/qlogwriter"
+	"github.com/devwak/quic-go"
+	quicproxy "github.com/devwak/quic-go/integrationtests/tools/proxy"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/internal/wire"
+	"github.com/devwak/quic-go/qlog"
+	"github.com/devwak/quic-go/qlogwriter"
 
 	"github.com/stretchr/testify/require"
 )
