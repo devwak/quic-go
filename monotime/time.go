@@ -3,7 +3,7 @@ package monotime
 import (
 	"time"
 
-	"github.com/metacubex/quic-go/internal/monotime"
+	"github.com/devwak/quic-go/internal/monotime"
 )
 
 // A Time represents an instant in monotonic time.

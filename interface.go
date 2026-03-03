@@ -8,9 +8,9 @@ import (
 	"net"
 	"time"
 
-	"github.com/metacubex/quic-go/internal/handshake"
-	"github.com/metacubex/quic-go/internal/protocol"
-	"github.com/metacubex/quic-go/qlogwriter"
+	"github.com/devwak/quic-go/internal/handshake"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/qlogwriter"
 )
 
 // The StreamID is the ID of a QUIC stream.

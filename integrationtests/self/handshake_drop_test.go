@@ -16,12 +16,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/metacubex/quic-go"
-	"github.com/metacubex/quic-go/internal/protocol"
-	"github.com/metacubex/quic-go/internal/synctest"
-	"github.com/metacubex/quic-go/qlog"
-	"github.com/metacubex/quic-go/testutils/events"
-	"github.com/metacubex/quic-go/testutils/simnet"
+	"github.com/devwak/quic-go"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/internal/synctest"
+	"github.com/devwak/quic-go/qlog"
+	"github.com/devwak/quic-go/testutils/events"
+	"github.com/devwak/quic-go/testutils/simnet"
 
 	"github.com/stretchr/testify/require"
 )

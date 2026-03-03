@@ -9,8 +9,8 @@ import (
 	"net"
 	"testing"
 
-	"github.com/metacubex/quic-go"
-	"github.com/metacubex/quic-go/internal/testdata"
+	"github.com/devwak/quic-go"
+	"github.com/devwak/quic-go/internal/testdata"
 
 	"github.com/stretchr/testify/require"
 )

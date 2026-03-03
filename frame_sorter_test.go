@@ -7,9 +7,9 @@ import (
 	"math"
 	"testing"
 
-	"github.com/metacubex/quic-go/internal/protocol"
-	"github.com/metacubex/quic-go/internal/utils"
-	"github.com/metacubex/quic-go/internal/utils/tree"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/internal/utils"
+	"github.com/devwak/quic-go/internal/utils/tree"
 
 	"github.com/stretchr/testify/require"
 )

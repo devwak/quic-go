@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/metacubex/quic-go"
-	"github.com/metacubex/quic-go/qlog"
+	"github.com/devwak/quic-go"
+	"github.com/devwak/quic-go/qlog"
 	"github.com/stretchr/testify/require"
 )
 

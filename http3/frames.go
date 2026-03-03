@@ -7,10 +7,10 @@ import (
 	"golang.org/x/exp/maps"
 	"io"
 
-	"github.com/metacubex/quic-go"
-	"github.com/metacubex/quic-go/http3/qlog"
-	"github.com/metacubex/quic-go/qlogwriter"
-	"github.com/metacubex/quic-go/quicvarint"
+	"github.com/devwak/quic-go"
+	"github.com/devwak/quic-go/http3/qlog"
+	"github.com/devwak/quic-go/qlogwriter"
+	"github.com/devwak/quic-go/quicvarint"
 )
 
 // FrameType is the frame type of a HTTP/3 frame

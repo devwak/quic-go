@@ -11,9 +11,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/metacubex/quic-go"
-	"github.com/metacubex/quic-go/http3"
-	quicproxy "github.com/metacubex/quic-go/integrationtests/tools/proxy"
+	"github.com/devwak/quic-go"
+	"github.com/devwak/quic-go/http3"
+	quicproxy "github.com/devwak/quic-go/integrationtests/tools/proxy"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

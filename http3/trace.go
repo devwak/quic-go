@@ -8,7 +8,7 @@ import (
 	"github.com/metacubex/http/httptrace"
 	"github.com/metacubex/tls"
 
-	"github.com/metacubex/quic-go"
+	"github.com/devwak/quic-go"
 )
 
 func traceGetConn(trace *httptrace.ClientTrace, hostPort string) {

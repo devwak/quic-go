@@ -3,8 +3,8 @@ package handshake
 import (
 	"testing"
 
-	"github.com/metacubex/quic-go/internal/wire"
-	"github.com/metacubex/quic-go/quicvarint"
+	"github.com/devwak/quic-go/internal/wire"
+	"github.com/devwak/quic-go/quicvarint"
 
 	"github.com/stretchr/testify/require"
 )

@@ -11,7 +11,7 @@ import (
 	"golang.org/x/net/ipv4"
 	"golang.org/x/sys/unix"
 
-	"github.com/metacubex/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/internal/protocol"
 
 	"github.com/stretchr/testify/require"
 )

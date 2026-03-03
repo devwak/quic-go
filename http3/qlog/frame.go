@@ -1,8 +1,8 @@
 package qlog
 
 import (
-	"github.com/metacubex/quic-go"
-	"github.com/metacubex/quic-go/qlogwriter/jsontext"
+	"github.com/devwak/quic-go"
+	"github.com/devwak/quic-go/qlogwriter/jsontext"
 )
 
 // Frame represents an HTTP/3 frame.

@@ -7,9 +7,9 @@ import (
 	"github.com/metacubex/tls"
 	"os"
 
-	"github.com/metacubex/quic-go"
-	"github.com/metacubex/quic-go/integrationtests/tools"
-	"github.com/metacubex/quic-go/qlogwriter"
+	"github.com/devwak/quic-go"
+	"github.com/devwak/quic-go/integrationtests/tools"
+	"github.com/devwak/quic-go/qlogwriter"
 )
 
 var (
