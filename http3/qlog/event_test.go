@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/quic-go/quic-go"
-	"github.com/quic-go/quic-go/internal/synctest"
-	"github.com/quic-go/quic-go/qlogwriter"
+	"github.com/devwak/quic-go"
+	"github.com/devwak/quic-go/internal/synctest"
+	"github.com/devwak/quic-go/qlogwriter"
 
 	"github.com/stretchr/testify/require"
 )

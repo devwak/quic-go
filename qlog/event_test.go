@@ -7,12 +7,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/quic-go/quic-go/internal/protocol"
-	"github.com/quic-go/quic-go/internal/qerr"
-	"github.com/quic-go/quic-go/internal/synctest"
-	"github.com/quic-go/quic-go/internal/utils"
-	"github.com/quic-go/quic-go/internal/wire"
-	"github.com/quic-go/quic-go/qlogwriter"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/internal/qerr"
+	"github.com/devwak/quic-go/internal/synctest"
+	"github.com/devwak/quic-go/internal/utils"
+	"github.com/devwak/quic-go/internal/wire"
+	"github.com/devwak/quic-go/qlogwriter"
 
 	"github.com/stretchr/testify/require"
 )

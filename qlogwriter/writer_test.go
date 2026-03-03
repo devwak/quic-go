@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/quic-go/quic-go/internal/synctest"
-	"github.com/quic-go/quic-go/qlogwriter/jsontext"
+	"github.com/devwak/quic-go/internal/synctest"
+	"github.com/devwak/quic-go/qlogwriter/jsontext"
 
 	"github.com/stretchr/testify/require"
 )

@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/quic-go/quic-go/internal/protocol"
-	"github.com/quic-go/quic-go/qlogwriter"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/qlogwriter"
 	"github.com/stretchr/testify/require"
 )
 

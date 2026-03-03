@@ -6,9 +6,9 @@ import (
 	"log"
 	"testing"
 
-	"github.com/quic-go/quic-go/internal/protocol"
-	"github.com/quic-go/quic-go/internal/utils"
-	"github.com/quic-go/quic-go/quicvarint"
+	"github.com/devwak/quic-go/internal/protocol"
+	"github.com/devwak/quic-go/internal/utils"
+	"github.com/devwak/quic-go/quicvarint"
 )
 
 func encodeVarInt(i uint64) []byte {

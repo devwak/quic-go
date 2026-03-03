@@ -10,10 +10,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/quic-go/quic-go"
-	"github.com/quic-go/quic-go/http3"
-	"github.com/quic-go/quic-go/internal/synctest"
-	"github.com/quic-go/quic-go/quicvarint"
+	"github.com/devwak/quic-go"
+	"github.com/devwak/quic-go/http3"
+	"github.com/devwak/quic-go/internal/synctest"
+	"github.com/devwak/quic-go/quicvarint"
 
 	"github.com/stretchr/testify/require"
 )

@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/quic-go/quic-go/internal/synctest"
+	"github.com/devwak/quic-go/internal/synctest"
 	"github.com/stretchr/testify/require"
 )
 
